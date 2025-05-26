@@ -1,0 +1,20 @@
+selenium
+pytest
+pytest-html
+
+7. 生成测试报告
+在PyCharm中，打开终端。
+在终端中运行以下命令：
+bash
+Copy
+python run_tests.py
+测试完成后，test_report目录下会生成一个report.html文件。
+用浏览器打开report.html文件，查看测试报告。
+8. 运行测试
+在PyCharm中，右键点击run_tests.py文件，选择Run 'run_tests'。
+测试完成后，查看终端输出和test_report/report.html文件中的测试报告。
+9. 扩展测试
+你可以根据需要继续扩展测试用例，覆盖网站的更多功能。例如，测试用户注销功能、测试不同用户权限等。
+10. 使用PyCharm调试测试
+在PyCharm中，右键点击测试文件（如test_login.py），选择Debug 'Unittests in test_login.py'。
+使用PyCharm的调试工具，逐步执行代码，查看变量值和执行流程。

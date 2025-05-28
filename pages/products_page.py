@@ -1,15 +1,21 @@
 # pages/products_page.py
+from jinja2.filters import do_select
 from selenium.webdriver.common.by import By
 
 class ProductsPage:
     def __init__(self, driver):
         self.driver = driver
         self.products_title = By.XPATH, "//span[@class='title']"
+        self.products_navbar = By.CLASS_NAME, "header_label"
         self.add_to_cart_button = By.ID, "add-to-cart-sauce-labs-backpack"
         self.cart_icon = By.CLASS_NAME, "shopping_cart_link"
         self.sort_dropdown = By.CLASS_NAME, "product_sort_container"
         self.product_names = By.CLASS_NAME, "inventory_item_name"
         self.product_prices = By.CLASS_NAME, "inventory_item_price"
+
+    def is_products_page_navbar(self):
+        """check if product page contain navbar"""
+        return self.driver.find_element(*self.products_navbar).text
 
     def is_products_page(self):
         """检查是否在产品页面"""

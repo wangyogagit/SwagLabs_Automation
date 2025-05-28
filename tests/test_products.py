@@ -1,6 +1,8 @@
 # tests/test_products.py
 import unittest
 from selenium import webdriver
+
+from pages import products_page
 from pages.login_page import LoginPage
 from pages.products_page import ProductsPage
 from pages.cart_page import CartPage
@@ -18,6 +20,9 @@ class ProductsTests(unittest.TestCase):
     def tearDown(self):
         """测试后的清理工作，关闭浏览器"""
         self.driver.quit()
+
+    def test_products_page_navbar(self):
+        self.assertIn("Swag Labs", self.products_page.is_products_page_navbar())
 
     def test_products_page_display(self):
         """测试产品页面是否正确显示"""
